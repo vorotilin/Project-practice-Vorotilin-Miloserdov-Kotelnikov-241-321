@@ -128,7 +128,7 @@
 3. Элементы HTML:
    https://developer.mozilla.org/ru/docs/Web/HTML/Element
 4. Основы HTML:
-   https://developer.mozilla.org/ru/docs/Learn_web_development/Getting_started/Your_first_website/Creating_the_content
+   https://developer.mozilla.org/ru/docs/Learn_web_development/Getting_started/Your_first_web../site/Creating_the_content
 5. Основы CSS:
    https://developer.mozilla.org/ru/docs/Web/CSS
 6. https://doka.guide/
