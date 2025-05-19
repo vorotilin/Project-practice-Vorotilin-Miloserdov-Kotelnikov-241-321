@@ -150,12 +150,22 @@ function initHeaderFeatures() {
       menuList.style.pointerEvents = show ? 'auto' : 'none';
     };
 
-    navBtn.addEventListener('focus', () => toggleMenu(true));
-    navBtn.addEventListener('blur', (event) => {
+    let menuClosingDelay;
+
+  navBtn.addEventListener('focus', () => {
+    clearTimeout(menuClosingDelay);
+    toggleMenu(true);
+  });
+
+  navBtn.addEventListener('blur', (event) => {
     if (!menuList.contains(event.relatedTarget)) {
-      toggleMenu(false);
+        menuClosingDelay = setTimeout(() => toggleMenu(false), 100);
     }
-});
+  });
+
+  menuList.addEventListener('focusin', () => {
+    clearTimeout(menuClosingDelay); 
+  });
 
     navBtn.addEventListener('click', (e) => {
       if (window.innerWidth <= 1200) {

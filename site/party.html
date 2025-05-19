@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт Проектной Практики</title>
+    <link rel="stylesheet" href="nomalize.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function loadTheme() {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme === "light") {
+                Body.classList.add("light-theme");
+            }
+        }
+        loadTheme()
+    </script>
+</head>
+<body>
+    <div id="header-container"></div>
+    <main>
+        <section>
+            <div class="container container-first">
+                <h1>Группа проектной практики</h1>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <h2>Участники</h2>
+                <div class="mini-block">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis atque earum vero eveniet, nam velit quasi blanditiis dolorem adipisci minus commodi, fuga sapiente incidunt architecto, iste maxime quos! Odio, enim?
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="mini-block">
+                    <img class="big-image" src="images/frame1.png" alt="Скриншот страницы сайта ПД">
+                    <h2>Человек</h2> 
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium rem distinctio nesciunt quis voluptatum non voluptates eos repudiandae, beatae explicabo perspiciatis ad voluptatem facilis odio eveniet placeat magni, odit asperiores.</p>
+                </div>
+            </div>
+        </section>
+        <ul class="toast-list"></ul>
+    </main>
+    <div id="footer-container"></div>
+</body>
+<script src="script.js"></script>
+</html>
