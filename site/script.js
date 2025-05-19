@@ -108,3 +108,38 @@ function showToast(type, duration = 4000, textarea) {
         setTimeout(() => toast.remove(), 500); 
     });
 }
+
+//Список навигации
+document.addEventListener('DOMContentLoaded', () => {
+  const menuList = document.querySelector('.nav.menu-list');
+  const currentPath = window.location.href.split('/').pop().split('?')[0].split('#')[0];
+  
+  document.querySelectorAll('.footer-list .footer-li, .nav.menu-list .footer-li').forEach(item => {
+    const link = item.querySelector('a');
+    if (!link) return;
+    const linkPath = link.href.split('/').pop().split('?')[0].split('#')[0];
+    if (linkPath === currentPath) item.classList.add('current-page-hidden');
+  });
+
+  const navBtn = document.querySelector('.nav-btn');
+  
+  if (navBtn && menuList) {
+    menuList.style.opacity = '0';
+    
+    const toggleMenu = (show) => {
+      menuList.style.opacity = show ? '1' : '0';
+      menuList.style.pointerEvents = show ? 'auto' : 'none';
+    };
+    
+    navBtn.addEventListener('focus', () => toggleMenu(true));
+    navBtn.addEventListener('blur', () => toggleMenu(false));
+    
+    navBtn.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        toggleMenu(menuList.style.opacity === '0');
+      }
+    });
+  }
+});
+

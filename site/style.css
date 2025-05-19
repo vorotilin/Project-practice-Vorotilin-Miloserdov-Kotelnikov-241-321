@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Roboto';
     font-weight: 400;
-    src: url(fonts/Roboto-Medium.ttf);
+    src: url(fonts/Roboto-Regular.ttf);
 }
 @font-face {
     font-family: 'Roboto';
@@ -19,7 +19,7 @@
     --weight-title: 500;
     --background-color: #1a191a;
     --background-block-dark: linear-gradient(180deg, #28272b 0%, #1c1b1d 100%);
-    --light-back: #f7f7f7;
+    --light-back: #fffffff3;
     --red: #c11e1e;
     --dark-red: #8f1010;
     --green: #338f4d;
@@ -34,36 +34,63 @@
 * {
     box-sizing: border-box;
 }
+::selection {
+    background: var(--purple);
+    color: var(--white);
+}
 a {
     text-decoration-line: none;
     color: inherit;
     transition: 0.4s ease;
 }
 a:hover {
-    color: var(--dark-purple);
+    color: var(--purple);
 }
 .change-theme-btn:hover path, .change-theme-btn:hover line, .change-theme-btn:hover circle {
-    stroke: var(--dark-purple);
+    stroke: var(--purple);
     transition: 0.4s ease;
 }
 body {
-    font-weight: 200;
-    color: var(--white);
-    font-size: 2rem;
-    overflow-x: hidden;
-    background: var(--background-color);
+  font: 200 2rem/1.5 system-ui, sans-serif;
+  color: var(--white, #fff);
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: 
+    linear-gradient(180deg, 
+      rgba(0,0,0,0.85) 0%, 
+      rgba(0,0,0,0.25) 50%,
+      transparent 100%
+    ),
+    url("images/indes-wallpaper.JPG") center/cover no-repeat;
+  filter: blur(4px) brightness(0.95);
+  transform: translateZ(0);
+  will-change: transform, filter;
 }
 .light-theme {
     color: var(--background-color); 
     background: var(--light-back);
+    font-weight: 400;
 }
 .light-theme .mini-block {
     background: var(--white);
-    box-shadow: none;
 }
 .light-theme header {
     background: var(--white);
     box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.02);
+}
+.light-theme .container{
+    background: var(--light-back);
 }
 .light-theme .input-place,.light-theme .result-block{
     border: 2px solid;
@@ -74,13 +101,18 @@ body {
     background-color: var(--white);
 }
 .container {
+    background: radial-gradient(circle,rgb(23, 21, 23) 0%, rgb(26, 26, 26) 100%);
     padding-inline: 15%;
     padding-block: 1rem;
+    padding-bottom: 5rem;
+}
+.container-first {
+    padding-bottom: 1rem;
 }
 .mini-block {
     background: var(--background-block-dark);
-    padding-block: 2rem;
-    padding-inline: 3rem;
+    padding-block: 3rem;
+    padding-inline: 5rem;
     box-shadow: 0 2rem 2rem rgba(0, 0, 0, 0.1);
     border-radius: 3rem;
 }
@@ -193,13 +225,54 @@ ul {
 }
 .change-theme-btn {
     position: absolute;
-    right: 15%;
+    left: 15%;
     top: 20%;
     background-color: inherit;
     border: 0;
 }
+.nav-btn {
+    position: absolute;
+    right: 15%;
+    top: 15%;
+    background-color: inherit;
+    border: 0;
+    border-radius: 1rem;
+}
+.nav-btn:hover line{
+    stroke: var(--purple);
+}
+.nav-btn:focus line{
+    stroke: var(--purple);
+}
+.nav-btn:active, .nav-btn:focus{
+    box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.1);
+}
+.nav li {
+    display: block;
+}
+.nav {
+    display: block;
+    font-family: 'Roboto';
+    font-size: 62.5%;
+    font-weight: 400;
+    position: fixed;
+    position: absolute;
+    right: 15%;
+    top: 120%;
+    background-color: var(--white);
+    width: 15rem;
+    border-radius: 2.5rem;
+    box-shadow: 0 3rem 3rem rgba(0, 0, 0, 0.1);
+    text-align: right;
+    padding-inline: 3rem;
+    transition: 0.2s ease;
+}
+.current-page-hidden {
+  display: none !important;
+}
 footer {
-    padding-block: 5rem;
+    font-weight: 200 !important;
+    padding-block: 0rem;
     margin-top: 7rem;
     background: linear-gradient(60deg,rgba(139, 62, 182, 1) 0%, rgba(57, 148, 153, 1) 55%, rgba(83, 237, 111, 1) 100%);
     color: var(--white);
@@ -207,9 +280,18 @@ footer {
 .brand {
     padding-block: 0.7rem;
 }
+.container-transparent {
+    background: transparent !important;
+    padding-block: 7rem;
+}
+.container-transparent h2{
+    color: var(--white) !important;
+}
 .footer-container {
+    padding-block: 5rem;
     display: flex;
     justify-content: space-between;
+    background: transparent !important;
 }
 .footer-mini-container img{
     max-height: 5rem;
@@ -240,9 +322,13 @@ footer a:hover {
     body {
         font-size: 1.3rem;
     }
-    .main-flex-wrapper {
+    .main-flex-wrapper, .footer-container {
         flex-direction: column;
         gap: 5rem;
+    }
+    .footer-container {
+        text-align: center;
+        flex-direction: column-reverse;
     }
     .btn, .result {
         width: 80%;
@@ -267,10 +353,23 @@ footer a:hover {
         width: 100%;
     }
     .change-theme-btn {
-        right: 2rem;
+        left: 2rem;
+    }
+    .nav-btn {
+        right: 1.8rem;
+    }
+    .nav {
+        right: 1.8rem;
+        width: 12rem;
     }
     .gallery {
         display: flex;
         overflow-x: scroll;
+    }
+    .mini-block {
+        padding: 2.5rem;
+    }
+    .mobile-hidden {
+        display: none;
     }
 }
