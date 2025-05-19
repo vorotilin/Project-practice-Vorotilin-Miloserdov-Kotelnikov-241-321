@@ -195,6 +195,15 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', checkVisibility);
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const h1 = document.querySelector('h1');
+  if (h1) {
+    setTimeout(() => {
+      h1.classList.add('animate-in');
+    }, 100); 
+  }
+});
+
 
 
 

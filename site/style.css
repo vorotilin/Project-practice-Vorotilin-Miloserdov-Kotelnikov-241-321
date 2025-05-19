@@ -119,6 +119,9 @@ body::before {
 .container-first {
     padding-bottom: 1rem;
 }
+.container-predict {
+    box-shadow: 0rem 5rem 5rem rgba(0, 0, 0, 0.4);
+}
 .mini-block {
     background: var(--background-block-dark);
     padding-block: 3rem;
@@ -151,6 +154,15 @@ main {
 }
 h1, h2, h3 {
     font-family: 'Gotham';
+}
+h1 {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+h1.animate-in {
+  opacity: 1;
+  transform: translateX(0);
 }
 .toast-list {
     position: fixed;
@@ -352,6 +364,9 @@ footer a:hover {
 .block-image-qr {
     background: white;
     aspect-ratio: 1/1;
+    width: 60%;
+    max-width: 20rem;
+    padding: 3rem;
 }
 @media (max-width:1200px) {
     .container {
@@ -409,5 +424,8 @@ footer a:hover {
     }
     .mobile-hidden {
         display: none;
+    }
+    .block-image-qr {
+        align-self: center;
     }
 }
