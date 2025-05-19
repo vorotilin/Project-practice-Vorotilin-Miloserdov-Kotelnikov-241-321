@@ -34,7 +34,7 @@
     --dark-gray: #8a8a8a;
     --yellow: #f29727;
     --purple: #8B3EB6;
-    --dark-purple: #5b3086;
+    --dark-purple: #633086;
 }
 * {
     box-sizing: border-box;
@@ -108,7 +108,6 @@ body::before {
 }
 .light-theme .result-block ,.light-theme .radio-wrapper{
     color: var(--background-color);
-    background-color: var(--white);
 }
 .container {
     background: radial-gradient(circle,rgb(23, 21, 23) 0%, rgb(26, 26, 26) 100%);
@@ -118,9 +117,6 @@ body::before {
 }
 .container-first {
     padding-bottom: 1rem;
-}
-.container-predict {
-    box-shadow: 0rem 5rem 5rem rgba(0, 0, 0, 0.4);
 }
 .mini-block {
     background: var(--background-block-dark);
@@ -243,11 +239,14 @@ ul {
     padding-block: 1.5rem;
     padding-inline: 2rem;
     background: var(--purple);
-    font-weight: 200;
+    font-weight: 400;
     margin-block: 1rem;
     font-size: 80%;
-    border-radius: 2rem;
+    border-radius: 1.5rem;
     transition: 0.2s ease;
+}
+.btn:hover {
+    background-color: var(--dark-purple);
 }
 .change-theme-btn {
     position: absolute;
@@ -292,6 +291,7 @@ ul {
     text-align: left;
     padding-inline: 3rem;
     transition: 0.2s ease;
+    z-index: 10;
 }
 .current-page-hidden {
   display: none !important;
@@ -364,9 +364,23 @@ footer a:hover {
 .block-image-qr {
     background: white;
     aspect-ratio: 1/1;
-    width: 60%;
+    width: 40%;
     max-width: 20rem;
     padding: 3rem;
+}
+.zad-text {
+    font-size: 80%;
+}
+.block-image-team {
+    text-align: left;
+}
+.back-rect {
+    background: var(--background-color);
+    height: 50rem;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    bottom: 45rem;
 }
 @media (max-width:1200px) {
     .container {

@@ -151,10 +151,14 @@ function initHeaderFeatures() {
     };
 
     navBtn.addEventListener('focus', () => toggleMenu(true));
-    navBtn.addEventListener('blur', () => toggleMenu(false));
+    navBtn.addEventListener('blur', (event) => {
+    if (!menuList.contains(event.relatedTarget)) {
+      toggleMenu(false);
+    }
+});
 
     navBtn.addEventListener('click', (e) => {
-      if (window.innerWidth <= 768) {
+      if (window.innerWidth <= 1200) {
         e.preventDefault();
         toggleMenu(menuList.style.opacity === '0');
       }
