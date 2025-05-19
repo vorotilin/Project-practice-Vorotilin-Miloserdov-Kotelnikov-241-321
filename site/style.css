@@ -118,6 +118,9 @@ body::before {
 .container-first {
     padding-bottom: 1rem;
 }
+.container-last {
+    padding-bottom: 10rem;
+}
 .mini-block {
     background: var(--background-block-dark);
     padding-block: 3rem;
@@ -299,7 +302,6 @@ ul {
 footer {
     font-weight: 200 !important;
     padding-block: 0rem;
-    margin-top: 7rem;
     background: linear-gradient(60deg,rgba(139, 62, 182, 1) 0%, rgba(57, 148, 153, 1) 55%, rgba(83, 237, 111, 1) 100%);
     color: var(--white);
 }
@@ -309,6 +311,7 @@ footer {
 .container-transparent {
     background: transparent !important;
     padding-block: 7rem;
+    margin-bottom: 7rem;
 }
 .container-transparent h2{
     color: var(--white) !important;
@@ -381,16 +384,79 @@ footer a:hover {
     position: absolute;
     bottom: 45rem;
 }
-@media (max-width:1200px) {
+.giga-image {
+    object-fit: cover;
+    aspect-ratio: 1/1;
+}
+.img-wrapper {
+    aspect-ratio: 1/1;
+    min-width: 8rem;
+    height: 100%;
+}
+.mini-block-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
+}
+.container-grid {
+    display: grid;
+    gap: 3%;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    height: 70vh;
+}
+.container-grid p{
+    font-size: 80%;
+}
+.vertical {
+    flex-direction: column;
+}
+.vertical .img-wrapper {
+    min-height: 8rem;
+    width: 100%;
+}
+.item-grid-1 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.item-grid-2 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+.item-grid-3 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+.item-grid-4 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+@media (max-width:750px) {
+    .img-wrapper {
+    width: 100%;
+    }   
     .container {
         padding-inline: 2rem;
     }
     body {
         font-size: 1.3rem;
     }
-    .main-flex-wrapper, .footer-container {
+    .main-flex-wrapper, .footer-container, .container-grid {
         flex-direction: column;
         gap: 5rem;
+    }
+    .mini-block-flex {
+        flex-direction: column;
+        gap: 1rem;
     }
     .footer-container {
         text-align: center;
