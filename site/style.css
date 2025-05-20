@@ -295,6 +295,7 @@ ul {
     padding-inline: 3rem;
     transition: 0.2s ease;
     z-index: 10;
+    padding-block: 1rem;
 }
 .current-page-hidden {
   display: none !important;
