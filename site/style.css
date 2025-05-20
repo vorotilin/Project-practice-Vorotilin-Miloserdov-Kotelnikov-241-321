@@ -48,6 +48,9 @@ a {
     color: inherit;
     transition: 0.4s ease;
 }
+.bold-a {
+    font-weight: 500;
+}
 a:hover {
     color: var(--purple);
 }

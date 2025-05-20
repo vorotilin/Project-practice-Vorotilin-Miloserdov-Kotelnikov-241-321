@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ресурсы: Сайт Проектной Практики ВМП</title>
+    <link rel="stylesheet" href="nomalize.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function loadTheme() {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme === "light") {
+                Body.classList.add("light-theme");
+            }
+        }
+        loadTheme()
+    </script>
+</head>
+<body>
+    <div id="header-container"></div>
+    <main>
+        <section>
+            <div class="container container-first">
+                <h1>Ресурсы</h1>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <h2>Официальные ресурсы проекта</h2>
+                <div class="mini-block">
+                    <ul>
+                        <li><p><a href="https://www.t.me/asada_dostavka" class="bold-a">Сайт проектной деятельности</a> — подробная информация о ходе выполнения проекта.</p></li>
+                        <li><p><a href="https://www.api.asada-dostavka.ru/" class="bold-a">Сайт прототипа проекта</a> — доступ к действующему интерфейсу автоматизированной системы.</p></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <h2>Методологические материалы</h2>
+                <div class="mini-block">
+                    <ul>
+                        <li><p><a href="https://ru.hexlet.io/lesson_filters/markdown" class="bold-a">Основы Markdown</a> — руководство по использованию синтаксиса Markdown для оформления отчётной документации.</p></li>
+                        <li><p><a href="https://git-scm.com/book/ru/v2" class="bold-a">Pro Git, книга</a> — исчерпывающее руководство по системе контроля версий Git, необходимой для управления кодом проекта и совместной работы в команде.</p></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <h2>Дополнительные ресурсы</h2>
+                <div class="main-flex-wrapper">
+                    <div class="mini-block">
+                        <h3>Управление логистикой и автоматизация</h3>
+                        <ul>
+                            <li><p><a href="https://unctad.org/topic/transport-and-trade-logistics/supply-chain" class="bold-a">UNCTAD: Управление цепями поставок</a> — материалы по международным стандартам и подходам к логистике.</p></li>
+                            <li><p><a href="https://www.ibm.com/topics/logistics-management" class="bold-a">IBM: Интеллектуальная логистика</a> — описание решений и подходов к цифровой трансформации логистических процессов.</p></li>
+                            <li><p><a href="https://www.coursera.org/specializations/supply-chain-management" class="bold-a">Coursera: Supply Chain Management Specialization</a> — специализированный онлайн-курс по управлению цепочками поставок.</p></li>
+                        </ul>
+                    </div>
+                    <div class="mini-block">
+                        <h3>Проектирование веб-платформ и UX</h3>
+                        <ul>
+                            <li><p><a href="https://m3.material.io/" class="bold-a">Material Design от Google</a> — рекомендации по проектированию интуитивно понятного пользовательского интерфейса.</p></li>
+                            <li><p><a href="https://www.nngroup.com/articles/ten-usability-heuristics/" class="bold-a">Jakob Nielsen's UX Guidelines</a> — 10 принципов юзабилити от авторитетного исследовательского центра.</p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <ul class="toast-list"></ul>
+    </main>
+    <div id="footer-container"></div>
+</body>
+<script src="script.js"></script>
+</html>
