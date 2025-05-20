@@ -473,6 +473,9 @@ p {
     width: 40vh;
     align-self: center;
 }
+.var-img {
+    width: 100%;
+}
 @media (max-width:1200px) {
     .img-wrapper {
         height: 15rem;
