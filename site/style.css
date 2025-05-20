@@ -442,6 +442,16 @@ footer a:hover {
     grid-row-start: 1;
     grid-row-end: 3;
 }
+.zad-wrapper div {
+    flex: 1;
+}
+p {
+    margin-top: 0.6rem;
+}
+.journal-container {
+    padding-inline: 3%;
+    margin-inline: 12%;
+}
 @media (max-width:1100px) {
     .img-wrapper {
     width: 100%;

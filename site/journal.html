@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт Проектной Практики</title>
+    <link rel="stylesheet" href="nomalize.css">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function loadTheme() {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme === "light") {
+                Body.classList.add("light-theme");
+            }
+        }
+        loadTheme()
+    </script>
+</head>
+<body>
+    <div id="header-container"></div>
+    <main>
+        <section>
+            <div class="container container-first journal-container">
+                <h1>Журнал проекта</h1>
+            </div>
+        </section>
+        <section>
+            <div class="container journal-container">
+                <h2>Пост 1</h2>
+                <div class="mini-block">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, praesentium laborum voluptates dolor modi aspernatur vel consectetur, commodi eius ad architecto ab ipsam quia voluptatibus repellendus labore unde! Officiis, aliquam?</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container journal-container">
+                <h2>Пост 2</h2>
+                <div class="mini-block">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, praesentium laborum voluptates dolor modi aspernatur vel consectetur, commodi eius ad architecto ab ipsam quia voluptatibus repellendus labore unde! Officiis, aliquam?</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container container-last journal-container">
+                <h2>Пост 3</h2>
+                <div class="mini-block">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, praesentium laborum voluptates dolor modi aspernatur vel consectetur, commodi eius ad architecto ab ipsam quia voluptatibus repellendus labore unde! Officiis, aliquam?</p>
+                </div>
+            </div>
+        </section>
+        <ul class="toast-list"></ul>
+    </main>
+    <div id="footer-container"></div>
+</body>
+<script src="script.js"></script>
+</html>
