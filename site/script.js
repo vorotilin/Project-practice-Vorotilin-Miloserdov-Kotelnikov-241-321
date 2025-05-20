@@ -186,6 +186,8 @@ function markCurrentPageLink() {
   });
 }
 
+
+
 //Анимация
 document.addEventListener('DOMContentLoaded', () => {
   const miniBlocks = document.querySelectorAll('.mini-block');

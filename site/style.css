@@ -33,7 +33,7 @@
     --gray: #c3bcbb;
     --dark-gray: #8a8a8a;
     --yellow: #f29727;
-    --purple: #8B3EB6;
+    --purple: #a153cb;
     --dark-purple: #633086;
 }
 * {
@@ -53,6 +53,9 @@ a {
 }
 a:hover {
     color: var(--purple);
+}
+.hidden {
+  display: none !important;
 }
 .under-link {
     font-weight: 500;
