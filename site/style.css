@@ -452,6 +452,14 @@ p {
     padding-inline: 3%;
     margin-inline: 12%;
 }
+.mini-block-journal {
+    display: flex;
+    justify-content: space-between;
+    gap: 3%;
+}
+.img-wrapper-journal {
+    flex-grow: 2;
+}
 @media (max-width:1100px) {
     .img-wrapper {
     width: 100%;
@@ -462,9 +470,14 @@ p {
     body {
         font-size: 1.3rem;
     }
-    .main-flex-wrapper, .footer-container, .container-grid {
+    .main-flex-wrapper, .footer-container, .container-grid{
         display: flex;
         flex-direction: column;
+        gap: 5rem;
+    }
+    .mini-block-journal {
+        flex-direction: column;
+        justify-content: flex-start;
         gap: 5rem;
     }
     .container-grid p{
