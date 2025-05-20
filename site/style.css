@@ -408,7 +408,7 @@ footer a:hover {
     max-height: 160vh;
 }
 .container-grid p{
-    font-size: 82%;
+    font-size: 78%;
 }
 .vertical {
     flex-direction: column;
@@ -459,15 +459,31 @@ p {
     gap: 3%;
 }
 .img-wrapper-journal {
-    flex-grow: 2;
+    width: 40vh;
+    align-self: center;
 }
-@media (max-width:1100px) {
+.img-wrapper-journal img{
+    object-fit: contain;
+    width: 40vh;
+    align-self: center;
+}
+@media (max-width:1200px) {
     .img-wrapper {
-    width: 100%;
-    }   
+        height: 15rem;
+        width: 15rem !important;
+    } 
+    .img-wrapper img {
+        height: 15rem;
+        width: 15rem;
+        aspect-ratio: 1/1;
+    }  
     .container {
         padding-inline: 2rem;
     }
+    .journal-container {
+        padding-inline: 4%;
+        margin-inline: 4%;
+    }   
     body {
         font-size: 1.3rem;
     }
@@ -475,6 +491,7 @@ p {
         display: flex;
         flex-direction: column;
         gap: 5rem;
+        max-height: none;
     }
     .mini-block-journal {
         flex-direction: column;
@@ -494,8 +511,10 @@ p {
         order: 3;
     }
     .mini-block-flex {
-        flex-direction: column;
+        flex-direction: row;
         gap: 1rem;
+        flex: 1;
+        justify-content: flex-start !important;
     }
     .footer-container {
         text-align: center;
@@ -546,4 +565,28 @@ p {
     .block-image-qr {
         align-self: center;
     }
+    .img-wrapper-journal {
+        width: 50%;
+        align-self: center;
+    }
+    .img-wrapper-journal img{
+        object-fit: contain;
+        width: 100%;
+        align-self: center;
+    }
+    .mini-block-journal-reverse {
+        flex-direction: column-reverse;
+    }
 }
+@media (max-width:500px) {
+    .img-wrapper {
+        height: 8rem;
+        width: 8rem !important;
+    } 
+    .img-wrapper img {
+        height: 8rem;
+        width: 8rem;
+        aspect-ratio: 1/1;
+        margin-top: 2rem;
+    }
+} 
